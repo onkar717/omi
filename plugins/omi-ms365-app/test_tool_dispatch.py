@@ -81,7 +81,7 @@ def load_app():
             self.status_code = status_code
 
     stubs = {
-        "fastapi": _module("fastapi", FastAPI=FastAPI, HTTPException=HTTPException, Query=lambda *a, **k: None, Request=object),
+        "fastapi": _module("fastapi", FastAPI=FastAPI, HTTPException=HTTPException, Query=lambda *a, **k: None, Request=object, Depends=lambda *a, **k: None),
         "fastapi.responses": _module("fastapi.responses", HTMLResponse=HTMLResponseStub, JSONResponse=dict, RedirectResponse=str),
         "itsdangerous": _module("itsdangerous", BadSignature=Exception, URLSafeSerializer=Serializer),
         "config": _module("config", get_settings=lambda: settings),
